@@ -44,7 +44,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     userElements = document.querySelectorAll("figure");
     for (let element of userElements) {
         element.addEventListener("click", handleUserClick)
-        element.addEventListener("touchend", handleUserClick)
     }
 });
 
@@ -93,6 +92,5 @@ const handleUserClick = function (this: HTMLElement) {
     let backElements = document.querySelectorAll(".back");
     for (let element of backElements) {
         element.addEventListener("click", handleUserClick)
-        element.addEventListener("touchend", handleUserClick)
     }
 };
