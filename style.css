@@ -1,0 +1,93 @@
+body {
+    background-color: rgb(8, 11, 23);
+    color: rgb(228, 228, 228);
+    text-align: center;
+    margin: 1rem;
+}
+
+#users {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 80rem;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 0.15rem rgb(101, 97, 123);
+    border-radius: 0.5rem;
+    margin: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    max-width: 7.5rem;
+}
+
+img {
+    max-width: 8rem;
+    border-radius: 0.5rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+#info {
+    margin-top: 1rem;
+}
+
+.back {
+    color: rgb(73, 185, 255);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    .back:hover {
+        color: rgb(161, 219, 255);
+    }
+
+    figure:hover {
+        border-color: rgb(255, 255, 177);
+        cursor: pointer;
+        color: rgb(255, 255, 177);
+    }
+
+    figure:hover img {
+        -webkit-box-shadow: 0px 0px 148px -17px rgba(255,255,255,1);
+        -moz-box-shadow: 0px 0px 148px -17px rgba(255,255,255,1);
+        box-shadow: 0px 0px 148px -17px rgba(255,255,255,1);
+    }
+}
+
+.loader {
+    padding: 1rem;
+    border: 0.55rem solid rgb(225, 225, 225);
+    border-top: 0.55rem solid rgb(132, 132, 132);
+    border-radius: 50%;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin: 1rem;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
