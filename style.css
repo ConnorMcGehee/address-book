@@ -78,7 +78,8 @@ img {
     border-radius: 50%;
     width: 0.75rem;
     height: 0.75rem;
-    margin: 1rem;
+    margin: auto;
+    margin-top: 1rem;
     animation: spin 2s linear infinite;
 }
 

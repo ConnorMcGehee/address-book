@@ -9,6 +9,8 @@ let userElements: NodeListOf<HTMLElement>;
 
 let infoShown = false;
 
+let loadCount = 0;
+
 let resultCount = 12;
 
 let users: any[] = [];
@@ -24,13 +26,13 @@ window.addEventListener("DOMContentLoaded", async () => {
                 users.push(data.results[i]);
             }
         });
-    infoElement.innerHTML = "Click user to see more info";
-    infoElement.style.textAlign = "left";
+
+    infoElement.innerHTML = `<div id="info">Loading images...<div class="loader"></div></div>`;
     users.sort((a, b) => a.name.first.charCodeAt(0) - b.name.first.charCodeAt(0));
-    console.log(users);
     users.forEach((user, i) => {
         let imageElement = document.createElement("img");
         imageElement.src = user.picture.large;
+        imageElement.addEventListener("load", imgLoad)
         let figureElement = document.createElement("figure");
         let figCaption = document.createElement("figcaption");
         figCaption.innerHTML = `${user.name.first} ${user.name.last}`;
@@ -45,6 +47,14 @@ window.addEventListener("DOMContentLoaded", async () => {
         element.addEventListener("touchstart", handleUserClick)
     }
 });
+
+const imgLoad = () => {
+    loadCount++;
+    if (loadCount === resultCount && !infoShown) {
+        infoElement.style.textAlign = "left";
+        infoElement.innerHTML = "Click user to see more info";
+    }
+}
 
 const toggleUsers = () => {
     if (!infoShown) {
