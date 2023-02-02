@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void
     userElements = document.querySelectorAll("figure");
     for (let element of userElements) {
         element.addEventListener("click", handleUserClick);
-        element.addEventListener("touchstart", handleUserClick);
+        element.addEventListener("touchend", handleUserClick);
     }
 }));
 const imgLoad = () => {
@@ -92,6 +92,6 @@ const handleUserClick = function () {
     let backElements = document.querySelectorAll(".back");
     for (let element of backElements) {
         element.addEventListener("click", handleUserClick);
-        element.addEventListener("touchstart", handleUserClick);
+        element.addEventListener("touchend", handleUserClick);
     }
 };
