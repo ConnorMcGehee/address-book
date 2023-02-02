@@ -19,7 +19,8 @@ figure {
     align-items: center;
     border: solid 0.15rem rgb(101, 97, 123);
     border-radius: 0.5rem;
-    margin: 1rem;
+    margin: min(1%, 1rem);
+    margin: max(1%, 0.2rem);
     padding: 1rem;
     overflow: hidden;
 }
